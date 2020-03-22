@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  my-app:
+    container_name: my-app
+    build: ./app
+    volumes:
+      - ../:/usr/src/my-app
+    tty: true
+    ports:
+      - 3000:3000
+  # db:
+  #   container_name: mariadb
+  #   image: mariadb
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=my-secret-pw
+  #   # volumes:
+  #   #   - ../db:/docker-entrypoint-initdb.d
+  #   ports:
+  #     - 3306:3306
